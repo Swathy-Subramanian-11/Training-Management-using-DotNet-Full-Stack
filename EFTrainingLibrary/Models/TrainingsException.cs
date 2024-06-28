@@ -9,6 +9,6 @@ namespace EFTrainingLibrary.Models
     public class TrainingsException : Exception
     {
         public TrainingsException(string msg) : base(msg) { }
-
+       
     }
 }
