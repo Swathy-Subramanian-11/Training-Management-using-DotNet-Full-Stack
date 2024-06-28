@@ -7,7 +7,7 @@ using EFTrainingLibrary.Models;
 
 namespace EFTrainingLibrary.Repos
 {
-    internal interface IEFTrainingRepoAsync
+    public interface IEFTrainingRepoAsync
     {
         Task<List<Training>> GetAllTrainingsAsync();
         Task<Training> GetTrainingByIdAsync(int trainingId);
@@ -16,7 +16,7 @@ namespace EFTrainingLibrary.Repos
         Task<List<Training>> GetTrainingByTrainerIdAsync(int trainerId);
 
 
-        Task InsertTraining(Training training);
+        Task InsertTrainingAsync(Training training);
         Task UpdateTrainingAsync(int trainingId, Training training);
         Task DeleteTrainingAsync(int trainingId);
     }

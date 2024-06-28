@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EFTrainingLibrary.Repos
 {
-    internal class EFTrainingRepoAsync : IEFTrainingRepoAsync
+    public class EFTrainingRepoAsync : IEFTrainingRepoAsync
     {
         EYTrainingsDBContext ctx = new EYTrainingsDBContext();
 
@@ -64,7 +64,7 @@ namespace EFTrainingLibrary.Repos
             }
         }
 
-        public async Task InsertTraining(Training training)
+        public async Task InsertTrainingAsync(Training training)
         {
             await ctx.Training.AddAsync(training);
             await ctx.SaveChangesAsync();
