@@ -13,7 +13,7 @@ namespace EFTrainingLibrary.Repos
 
         Task<List<Employee>> GetEmployeeByDesignationAsync(string desg);
 
-        Task InsertEmployee(Employee emp);  
+        Task InsertEmployeeAsync(Employee emp);  
         Task UpdateEmployeeAsync(int empId ,Employee employee);
         Task DeleteEmployeeAsync (int empId);
     }

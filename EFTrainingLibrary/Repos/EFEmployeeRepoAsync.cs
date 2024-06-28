@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EFTrainingLibrary.Repos
 {
-    internal class EFEmployeeRepoAsync : IEFEmployeeRepoAsync
+    public class EFEmployeeRepoAsync : IEFEmployeeRepoAsync
     {
         EYTrainingsDBContext ctx = new EYTrainingsDBContext();
         public async  Task DeleteEmployeeAsync(int empId)
@@ -51,9 +51,9 @@ namespace EFTrainingLibrary.Repos
             return (emps);
         }
 
-        public async Task InsertEmployee(Employee emp)
+        public async Task InsertEmployeeAsync(Employee emp)
         {
-          await ctx.AddAsync(emp);
+          await ctx.Employees.AddAsync(emp);
             await ctx.SaveChangesAsync();
         }
 
