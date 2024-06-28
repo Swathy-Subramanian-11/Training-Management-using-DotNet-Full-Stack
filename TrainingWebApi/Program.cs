@@ -1,4 +1,6 @@
 
+using EFTrainingLibrary.Repos;
+
 namespace TrainingWebApi
 {
     public class Program
@@ -13,6 +15,7 @@ namespace TrainingWebApi
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddScoped<IETraineeRepoAsync, EFTraineeRepoAsync>();
 
             var app = builder.Build();
 
