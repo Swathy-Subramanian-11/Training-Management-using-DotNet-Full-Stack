@@ -82,4 +82,4 @@ INSERT INTO Trainee (TrainingId, EmpId, Status) VALUES
 (3, 1, 'C'),
 (3, 3, 'I');
 
---hiii
+--hiii heloo
