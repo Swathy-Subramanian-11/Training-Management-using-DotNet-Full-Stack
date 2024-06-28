@@ -1,6 +1,7 @@
-
-using EFTrainingLibrary.Repos;
 using EFTrainingLibrary.Models;
+using EFTrainingLibrary.Repos;
+using Microsoft.OpenApi.Models;
+
 namespace TrainingWebApi
 {
     public class Program
@@ -16,6 +17,16 @@ namespace TrainingWebApi
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddScoped<IEFEmployeeRepoAsync, EFEmployeeRepoAsync>();  
+            builder.Services.AddScoped<IEFTrainingRepoAsync, EFTrainingRepoAsync>();
+
+            builder.Services.AddSwaggerGen(options => {
+                options.MapType<DateOnly>(() => new OpenApiSchema
+                {
+                    Type = "string",
+                    Format = "date"
+                });
+            });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
