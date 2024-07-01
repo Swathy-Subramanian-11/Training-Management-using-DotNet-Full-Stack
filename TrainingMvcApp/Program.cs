@@ -1,4 +1,5 @@
 namespace TrainingMvcApp
+
 {
     public class Program
     {

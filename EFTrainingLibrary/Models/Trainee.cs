@@ -11,7 +11,7 @@ public partial class Trainee
 
     public string Status { get; set; } = null!;
 
-    public virtual Employee Emp { get; set; } = null!;
+    public virtual Employee? Emp { get; set; } = null!;
 
-    public virtual Training Training { get; set; } = null!;
+    public virtual Training? Training { get; set; } = null!;
 }

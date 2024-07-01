@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace EFTrainingLibrary.Models
 {
-    public class TrainingsException:Exception
+    public class TrainingsException : Exception
     {
-        public TrainingsException(string msg): base(msg) { }
+        public TrainingsException(string msg) : base(msg) { }
        
     }
 }
