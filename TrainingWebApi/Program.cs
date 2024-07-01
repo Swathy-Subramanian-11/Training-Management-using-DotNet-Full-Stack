@@ -2,6 +2,8 @@ using EFTrainingLibrary.Models;
 using EFTrainingLibrary.Repos;
 using Microsoft.OpenApi.Models;
 
+using EFTrainingLibrary.Repos;
+
 namespace TrainingWebApi
 {
     public class Program
@@ -25,6 +27,8 @@ namespace TrainingWebApi
                     Format = "date"
                 });
             });
+
+            builder.Services.AddScoped<IEFTrainerRepoAsync, EFTrainerRepoAsync>();
 
             var app = builder.Build();
 
