@@ -15,6 +15,10 @@ namespace TrainingsWebAPI
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddScoped<IEFTechnologyRepoAsync, EFTechnologyRepoAsync>();
+            builder.Services.AddScoped<IEFEmployeeRepoAsync,EFEmployeeRepoAsync>();
+            builder.Services.AddScoped<IEFTrainerRepoAsync, EFTrainerRepoAsync>();
+            builder.Services.AddScoped<IEFTrainingRepoAsync, EFTrainingRepoAsync>();
+            builder.Services.AddScoped<IETraineeRepoAsync, EFTraineeRepoAsync>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
