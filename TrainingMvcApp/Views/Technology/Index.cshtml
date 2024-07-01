@@ -1,0 +1,48 @@
+﻿@model IEnumerable<TrainingMvcApp.Models.Technology>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TechnologyId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TechnologyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TechnologyType)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TechnologyId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TechnologyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TechnologyType)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { techId = item.TechnologyId }) |
+                    @Html.ActionLink("Details", "Details", new { techId = item.TechnologyId }) |
+                    @Html.ActionLink("Delete", "Delete", new { techId = item.TechnologyId })
+                    @Html.ActionLink("GetByType", "GetByType", new { type = item.TechnologyType })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

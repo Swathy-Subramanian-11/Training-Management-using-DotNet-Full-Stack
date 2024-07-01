@@ -15,9 +15,9 @@ public partial class Training
 
     public DateOnly EndDate { get; set; }
 
-    public virtual Technology Technology { get; set; } = null!;
+    public virtual Technology? Technology { get; set; } = null!;
 
-    public virtual ICollection<Trainee> Trainees { get; set; } = new List<Trainee>();
+    public virtual ICollection<Trainee>? Trainees { get; set; } = new List<Trainee>();
 
-    public virtual Trainer Trainer { get; set; } = null!;
+    public virtual Trainer? Trainer { get; set; } = null!;
 }
