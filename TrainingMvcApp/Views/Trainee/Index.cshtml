@@ -1,0 +1,49 @@
+﻿@model IEnumerable<TrainingMvcApp.Models.Trainee>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TrainingId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrainingId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                    @Html.ActionLink("Edit", "Edit", new { eid = item.EmpId, tid = item.TrainingId }) |
+                    @Html.ActionLink("Details", "Details", new { eid = item.EmpId, tid = item.TrainingId }) |
+                    @Html.ActionLink("Gettid", "Gettid", new { tid = item.TrainingId }) |
+                    @Html.ActionLink("Geteid", "Geteid", new { eid = item.EmpId }) |
+                    @Html.ActionLink("Delete", "Delete", new { eid= item.EmpId, tid = item.TrainingId })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
