@@ -6,7 +6,7 @@ namespace TrainingMvcApp.Controllers
 {
     public class TraineeController : Controller
     {
-        static HttpClient client = new HttpClient() { BaseAddress = new Uri("http://localhost:5066/api/Trainee/") };
+        static HttpClient client = new HttpClient() { BaseAddress = new Uri("http://localhost:5087/api/Trainee/") };
         public async Task<ActionResult> Index()
         {
             List<Trainee> trainees = await client.GetFromJsonAsync<List<Trainee>>("");

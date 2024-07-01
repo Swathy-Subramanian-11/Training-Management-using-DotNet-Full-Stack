@@ -8,7 +8,7 @@ namespace TrainingMvcApp.Controllers
 {
     public class TrainerController : Controller
     {
-        static HttpClient client = new HttpClient() { BaseAddress = new Uri("http://localhost:5066/api/Trainer/") };
+        static HttpClient client = new HttpClient() { BaseAddress = new Uri("http://localhost:5087/api/Trainer/") };
 
    
         public async Task<ActionResult> Index()
