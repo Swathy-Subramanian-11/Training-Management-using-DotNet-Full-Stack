@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EFTrainingLibrary\EFTrainingLibrary.csproj" />
-    <ProjectReference Include="..\TrainingWebApi\TrainingWebApi.csproj" />
 
     <PackageReference Include="Microsoft.Net.Http" Version="2.2.29" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.2" />
