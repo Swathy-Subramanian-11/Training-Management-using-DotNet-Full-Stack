@@ -1,12 +1,6 @@
 using EFTrainingLibrary.Models;
 using EFTrainingLibrary.Repos;
-using Microsoft.OpenApi.Models;
-
-using EFTrainingLibrary.Repos;
-
-using EFTrainingLibrary.Repos;
-
-namespace TrainingWebApi
+namespace TrainingsWebAPI
 {
     public class Program
     {
@@ -20,19 +14,11 @@ namespace TrainingWebApi
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.AddScoped<IETraineeRepoAsync, EFTraineeRepoAsync>();
-            builder.Services.AddScoped<IEFTrainingRepoAsync, EFTrainingRepoAsync>();
-
-            builder.Services.AddSwaggerGen(options => {
-                options.MapType<DateOnly>(() => new OpenApiSchema
-                {
-                    Type = "string",
-                    Format = "date"
-                });
-            });
-
+            builder.Services.AddScoped<IEFTechnologyRepoAsync, EFTechnologyRepoAsync>();
+            builder.Services.AddScoped<IEFEmployeeRepoAsync,EFEmployeeRepoAsync>();
             builder.Services.AddScoped<IEFTrainerRepoAsync, EFTrainerRepoAsync>();
-
+            builder.Services.AddScoped<IEFTrainingRepoAsync, EFTrainingRepoAsync>();
+            builder.Services.AddScoped<IETraineeRepoAsync, EFTraineeRepoAsync>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
