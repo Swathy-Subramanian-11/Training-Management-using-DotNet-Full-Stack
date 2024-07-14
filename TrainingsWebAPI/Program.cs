@@ -19,6 +19,11 @@ namespace TrainingsWebAPI
             builder.Services.AddScoped<IEFTrainerRepoAsync, EFTrainerRepoAsync>();
             builder.Services.AddScoped<IEFTrainingRepoAsync, EFTrainingRepoAsync>();
             builder.Services.AddScoped<IETraineeRepoAsync, EFTraineeRepoAsync>();
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("MyPolicy", builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -27,6 +32,7 @@ namespace TrainingsWebAPI
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+            app.UseCors("MyPolicy");
 
             app.UseAuthorization();
 
